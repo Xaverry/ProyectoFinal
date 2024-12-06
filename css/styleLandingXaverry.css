@@ -1,0 +1,600 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+:root{
+    --main-c:#264898; /*Color azul 60%*/
+    --second-c:#1976D2; /*Color aquablue 30%*/
+    --third-c:#FF5722; /*Color Naranja 30%*/
+    --neutral-c:#f0f0f0; /*Color neutro*/
+    --border-r:.5rem;
+}
+
+*{
+  font-family: 'Lato', Arial, Helvetica, sans-serif;
+}
+
+body{
+  background:var(--neutral-c);
+}
+
+ul, li{
+    list-style: none;
+}
+
+
+.titleH1 {
+    color: var(--main-c); /* Color del texto */
+    font-weight: bold;
+    font-size: 3.5rem; 
+    text-shadow: 4px 4px 5px rgba(0, 0, 0, 0.3); /* Sombra al texto */
+    position: relative; /* Necesario para posicionar la raya debajo */
+    text-transform: uppercase;
+}
+
+.titleH1::after {
+    content: ""; /* Elemento decorativo */
+    display: block;
+    width: 100%; /* Longitud de la línea, puedes ajustarlo */
+    height: 5px; /* Grosor de la línea */
+    background-color: var(--third-c); /* Color de la raya (naranja) */
+    margin: 15px auto 0; /* Espaciado encima/centro */
+    position: absolute; /* Posición relativa al contenedor */
+    left: 0;
+    bottom: -10px; /* Ajusta para mover la raya debajo del texto */
+    border-radius: 5px; /* Bordes redondeados opcionales */
+    margin-bottom: 5px;
+    
+}
+
+#titleH2 {
+    color: var(--second-c); /* Color del texto */
+    font-weight: bold;
+    text-shadow: 4px 4px 5px rgba(0, 0, 0, 0.3); /* Sombra al texto */
+    text-transform: uppercase;
+}
+
+#titleH3 {
+  color: var(--second-c); /* Color del texto */
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/*ESTILOS ESPECIFICOS DE PROFILE*/
+.profileParraf{
+    text-align: justify;
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 2rem 0rem 0rem 0rem;
+}
+
+.about-img-profile {
+    display: flex;
+    justify-content: center;  /* Centra el contenido horizontalmente */
+    align-items: center;      /* Centra el contenido verticalmente */
+    height: 100%;             /* Asegura que el contenedor tenga altura completa para centrar */
+}
+
+
+/* Estilo para el cuadro emergente */
+.description-popup {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 300px;
+    color: white;
+    z-index: 1000;
+}
+
+.popup-content {
+    text-align: center;
+}
+
+#closePopup {
+    background-color: var(--third-c);
+    border: none;
+    padding: 5px 10px;
+    color: white;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* Cuando el popup está visible */
+.description-popup.active {
+    display: block;
+}
+
+.value-item {
+    position: relative;
+}
+
+.section-padding{
+  padding: 100px 0;
+}
+
+/************************************************************CAROUSEL STYLES*/
+
+.carousel-item{
+  height: 75vh;
+  min-height: 300px;
+}
+
+.carousel-caption{
+  bottom: 220px;
+  z-index: 2;
+}
+
+.carousel-caption h5{
+  font-size: 45px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 25px;
+}
+
+.carousel-caption p{
+  width: 60%;
+  margin: auto;
+  font-size: 18px;
+  line-height: 1.9;
+}
+
+.carousel-inner::before{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgb(0, 0, 0,0.7);
+  z-index: 1;
+}
+/*PENSAR SI QUITAR*/
+.w-100{
+    height: 100vh;
+  }
+
+/******************************************************************************HEADER*/
+.navbar-nav a{
+  font-size: 15px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.custom-bg {
+    background-color: var(--main-c);
+    /*height: 100px;*/
+    /* border-bottom: 2px solid var(--third-c); PENSAR SI DEJO O NO EL BORDE INFERIOR AL HEADER*/
+}
+
+/* Aseguramos que el logo se mantenga alineado a la izquierda */
+.navbar .navbar-brand {
+    margin-right: auto;  /* Empuja el logo hacia la izquierda */
+}
+
+.logo-header {
+    max-width: 100px; /* Tamaño máximo del logo */
+    height: auto;     /* Mantiene la proporción */
+}
+
+.navbar-light .navbar-brand{
+  
+  color: black;
+  font-size: 25px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+.navbar-light .navbar-brand:focus,
+.navbar-light .navbar-brand:hover{
+  color: black;
+}
+.navbar-light .navbar-nav .navbar-link{
+  color: red;
+}
+
+#navBarProfile{
+    background-color: var(--main-c);
+}
+
+/* Cambiar el color de los enlaces */
+.navbar-nav .nav-link {
+    color: var(--neutral-c); /* Cambia #000 por el color que desees */
+    font-weight: bold;
+    
+}
+
+/* Cambiar el color cuando se pasa el ratón por encima */
+.navbar-nav .nav-link:hover {
+    color: var(--third-c); /* Cambia #007bff por el color que desees para el hover */
+    font-weight: bold;
+}
+
+/* Cambiar el color del enlace activo (cuando el usuario está en la sección actual) */
+.navbar-nav .nav-item.active .nav-link {
+    color: var(--third-c); /* Cambia este color al que desees para el enlace activo */
+}
+
+/*Estilo para los botones bootstrap*/
+#iTagHeader{
+  font-size: 20px;
+} 
+/********************************************************ESTILOS LO QUE NOS DEFINE*/
+
+/*MISIÓN VISION VALORES*/
+.defineUs .card-body i{  
+  font-size: 50px;
+
+}
+
+.defineUsParraf{
+  /*padding: 1rem 10rem 0rem 10rem;*/
+  text-align: justify;
+  font-weight: bold;
+  padding-top: 15px;
+  padding-bottom: 0%;
+}
+
+#cardDefineUS {
+  background-color: var(--main-c);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-shadow: 15px 15px 40px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;  /* Agregar transición para suavizar el cambio */
+}
+
+#cardDefineUS:hover {
+  background-color: var(--second-c);  /* Cambiar color de fondo en hover */
+  color: #333;  /* Cambiar color del texto */
+  transform: translateY(-10px);
+  box-shadow: 0 15px 80px rgba(255, 87, 34, 0.3);
+}
+
+#iTag {
+  transition: transform 0.3s ease;
+}
+
+#cardDefineUS:hover #iTag {
+  transform: rotate(180deg);  /* Girar el ícono cuando se hace hover sobre el card */
+  color: var(--third-c);
+}
+
+
+.lead{
+  text-align: justify;
+}
+
+#cardDefineUBody{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Distribuye el espacio entre los elementos */
+  flex-grow: 1;
+}
+
+#btn-defineUs{
+  background-color: var(--third-c);
+  border: var(--third-c);
+  margin-top: auto;
+  padding: 10px 20px; /* Ajusta el tamaño del botón según sea necesario */
+  width: auto; /* El botón se ajusta a su contenido */
+  max-width: 200px; /* Establece un límite en el tamaño del botón, puedes ajustarlo */
+  display: inline-block; /* Asegura que el botón no se expanda por todo el ancho */
+  align-self: center; /* Centra el botón en su contenedor */
+}
+
+.value-item{
+  margin-top: 2%;
+  font-size: 1.5rem; /* Aumenta el tamaño de la fuente */
+  text-align: left; /* Alinea el texto a la izquierda */
+  margin-bottom: 0.5rem; /* Añade un poco de espacio entre los elementos */
+  position: relative; /* Necesario para la posición de la descripción */
+  overflow: hidden; /* Asegura que la descripción no se desborde fuera del contenedor */
+  padding-right: 100px; /* Deja un espacio a la derecha para la descripción */
+  cursor: pointer;
+}
+
+#cardDefineUBody li:hover {
+  color: var(--third-c); /* Cambia el color al pasar el cursor */
+}
+
+/*Estilo para los botones bootstrap*/
+#iTag{
+  font-size: 40px;
+}
+/********************************************************FIN**********************************************************/
+
+/***********************************************************NUESTO EQUIPO*/
+.team .card-body i{  
+  font-size: 30px;
+}
+
+#teamRow .card img {
+    max-width: 100%; /* La imagen nunca será más ancha que su contenedor */
+    height: auto;    /* Mantiene la proporción de la imagen */
+    object-fit: cover; /* Asegura que la imagen se vea bien si se recorta */
+}
+
+.card-body {
+    padding: 1rem; /* Asegura un buen espacio interno */
+}
+
+.row.d-flex {
+    display: flex;
+    flex-wrap: wrap; /* Permite el ajuste en pantallas pequeñas */
+}
+
+.card {
+    height: 100%;
+}
+
+.team .card{
+  box-shadow: 15px 15px 40px rgba(0,0,0,0.15);
+}
+
+.cv-container {
+  display: flex;
+  flex-direction: column; /* Alinear elementos verticalmente */
+  align-items: center; /* Centrar el contenido */
+}
+
+.download-btn {
+  margin-bottom: 5px; /* Espacio entre el botón y el texto */
+}
+
+.cv-label {
+  font-size: 16px;
+  color: var(--third-c);
+  font-weight: bold;
+}
+
+.card-text
+{
+  text-align: justify;
+}
+
+
+/***********************************************************PORTAFOLIO*/
+
+#projectContainer{
+  margin-bottom: 20px;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.portfolio .card{
+  box-shadow: 15px 15px 40px rgba(0,0,0,0.25);
+}
+
+.img-area {
+  position: relative;
+  overflow: hidden;
+  height: 200px; /* Puedes ajustar esta altura */
+}
+
+.img-area img {
+  object-fit: cover; /* Esto asegura que la imagen se recorte para llenar el área sin distorsionarse */
+  width: 100%;
+  height: 100%;
+}
+
+#btn-portfolio{
+  background-color: var(--third-c);
+  border: var(--third-c);
+  color: var(--neutral-c);
+  margin-top: auto; /* Esto empuja el botón al fondo */
+  padding: 10px 20px; /* Ajusta el tamaño del botón según sea necesario */
+  width: auto; /* El botón se ajusta a su contenido */
+  max-width: 200px; /* Establece un límite en el tamaño del botón, puedes ajustarlo */
+  display: inline-block; /* Asegura que el botón no se expanda por todo el ancho */
+  align-self: center; /* Centra el botón en su contenedor */
+  transition: all 0.3s ease; /* Añadimos transición suave para efectos */
+}
+
+#btn-portfolio:hover {
+  background-color: var(--second-c); /* Cambia el color de fondo al pasar el mouse */
+  color: var(--neutral-c); /* Cambia el color del texto */
+  transform: scale(1.1); /* Aumenta ligeramente el tamaño del botón */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Agrega una sombra suave al pasar el mouse */
+  cursor: pointer; /* Cambia el cursor para indicar interactividad */
+}
+
+
+/************************************************************ Formulario **/
+textarea {
+  resize: none; /* Desactiva la redimensión */
+  width: 100%; /* Asegura que ocupe el ancho completo del contenedor */
+  height: 100px; /* Define una altura fija */
+  box-sizing: border-box; /* Incluye el padding y el borde dentro del tamaño total */
+}
+
+#formContainer{
+  background-color: var(--neutral-c);
+  
+}
+
+#rowFormContainer{
+  background-color: var(--neutral-c);
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Opcional, solo si necesitas centrar verticalmente */
+  height: 100px; /* Ejemplo para mostrar mejor el efecto */
+}
+
+#btn-form{
+  background-color: var(--third-c);
+  border: var(--third-c);
+  color: var(--neutral-c);
+  margin-top: auto; /* Esto empuja el botón al fondo */
+  padding: 10px 20px; /* Ajusta el tamaño del botón según sea necesario */
+  width: auto; /* El botón se ajusta a su contenido */
+  max-width: 200px; /* Establece un límite en el tamaño del botón, puedes ajustarlo */
+  align-self: center; /* Centra el botón en su contenedor */
+  transition: all 0.3s ease; /* Añadimos transición suave para efectos */
+}
+
+#btn-form:hover {
+  background-color: var(--second-c); /* Cambia el color de fondo al pasar el mouse */
+  color: var(--neutral-c); /* Cambia el color del texto */
+  transform: scale(1.1); /* Aumenta ligeramente el tamaño del botón */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Agrega una sombra suave al pasar el mouse */
+  cursor: pointer; /* Cambia el cursor para indicar interactividad */
+}
+
+#containerContactImage{
+  background-color: var(--neutral-c);
+  padding: 10px; /* Opcional, para agregar algo de espacio alrededor */
+}
+
+#contactImage{
+  border-radius: 2%;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+/************************************************************ Footer **/
+
+.footer-section{
+    max-width: 100%;
+    padding: 1rem 0;
+    background-color: var(--main-c);
+}
+  
+.menu-footer-section{
+    padding: 1rem 0;
+}
+  
+.wrap-social-logos ul, .wrap-menu-footer-section ul{
+    display: flex;
+    justify-content: center;
+}
+
+.wrap-social-logos ul {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+.wrap-menu-footer-section ul li{
+    margin: 0 50px;
+}
+
+.wrap-social-logos li {
+    margin: 0% 5% 0% 5%;
+}
+  
+.wrap-social-logos i {
+    color: var(--third-c);
+    font-size: 3rem; /* Tamaño más grande para los íconos */
+    transition: transform 0.3s ease; /* Efecto al pasar el cursor */
+}
+
+.wrap-social-logos i:hover {
+    transform: scale(1.5); /* Agranda el ícono cuando se pasa el cursor */
+}
+
+.footer-creds{
+    color: var(--neutral-c);
+    display: flex;
+    justify-content: center;
+}
+
+
+
+/************************************************************Responsive*/
+
+@media only screen and (min-width:768px) and (max-width:991px){
+  .carousel-caption{
+      bottom: 370px;
+  }
+  .carousel-caption p{
+    width: 100%;
+  }
+  .card{
+    margin-bottom: 30px;
+  }
+  .img-area img{
+    width: 100%;
+  }
+
+  #projectContainer{
+    margin-bottom: 20px;
+  }
+  
+}
+
+
+@media only screen and (max-width:767px){
+  .navbar-nav{
+    text-align: center;
+  }
+  .carousel-caption{
+    bottom: 125px;
+  }
+  .carousel-caption h5{
+    font-size: 17px;
+  }
+  .carousel-caption a{
+    padding: 10px 15px;
+  }
+  .carousel-caption P{
+    width: 100%;
+    line-height: 1.6;
+    font-size: 12px;
+  }
+  .about-text{
+    padding-top: 20px;
+  }
+  .card{
+    margin-bottom: 30px;
+  }
+
+  #cardDefineUBody{
+    margin-bottom: 30px;
+  }
+
+  #projectContainer{
+    margin-bottom: 20px;
+  }
+  
+}
+
+/* Footer - Responsivo */
+@media (max-width: 768px) {
+    .wrap-social-logos ul {
+        flex-direction: column; /* Organiza los íconos de redes sociales en columna */
+        align-items: center;
+    }
+
+    .social-logo {
+        max-width: 50px; /* Ajusta el tamaño de los iconos en pantallas pequeñas */
+        margin: 0.5rem;
+    }
+}
+
+/* Footer - Responsivo */
+@media (max-width: 768px) {
+    .footer-column {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 1rem 0;
+    }
+
+    .footer-column a {
+        margin: 0.5rem 0; /* Ajusta el espaciado de los enlaces */
+        font-size: 1rem;
+    }
+}
+
+
